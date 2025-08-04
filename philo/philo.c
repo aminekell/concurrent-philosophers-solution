@@ -21,7 +21,8 @@ int	main(int ac, char **av)
 	if (check_args(ac, av))
 		return (EXIT_FAILURE);
 	size = safe_atoi(av[1]);
-	(1) && (philos = NULL, info = set_info(ac, av));
+	philos = NULL;
+	info = set_info(ac, av);
 	if (!info)
 		return (EXIT_FAILURE);
 	philos = create_philosophers(philos, info, size);
@@ -29,5 +30,5 @@ int	main(int ac, char **av)
 		return (cleanup_info(info), EXIT_FAILURE);
 	if (initialize_philo(philos, size))
 		return (destroy_all(philos, size), EXIT_FAILURE);
-	return (destroy_all(philos, size), 0);
+	return (destroy_all(philos, size), EXIT_SUCCESS);
 }

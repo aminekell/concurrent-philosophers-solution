@@ -21,7 +21,7 @@ void	*philosopher_routine(void *arg)
 	philo->last_meal = current_time();
 	pthread_mutex_unlock(&philo->meal_mutex);
 	if (philo->id % 2 == 0)
-		ft_usleep(1, philo);
+		usleep(70);
 	while (!is_dead(philo))
 	{
 		eat(philo);

@@ -74,8 +74,6 @@ void	philosopher_eat(t_philo *philosopher)
 int	start_philo_routine(t_philo *philosopher)
 {
 	philosopher->last_meal_time = get_current_time();
-	if (philosopher->id % 2 == 0)
-		usleep(200);
 	while (1)
 	{
 		philosopher_eat(philosopher);
